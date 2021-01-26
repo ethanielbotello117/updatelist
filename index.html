@@ -16,34 +16,41 @@
         <div class="travel">
             <input type="text" class="leaving" id="leaving" placeholder="Leaving From">
             <input type="text" class="going" id="going" placeholder="Going To">
-            Leaving Date<input type="date" class="goingdate" id="goingDate">
+            Leaving Date<input type="date" class="goingdate" id="leavingDate">
             Return Date<input type="date" class="returndate" id="returnDate">
             Amount of Bags<input type="number" class="bags" id="bags">    
         </div>
 
-        <div class="services">
             <div class="food">
-                <input type="radio" name="extra" class="meal chicken" id="chicken" onclick="meal1()">Chicken
-                <input type="radio" name="extra" class="meal fish" id="fish" onclick="meal2()">Fish
-                <input type="radio" name="extra" class="meal veggie" id="veggie" onclick="meal3()">Veggies
+                <label for="chicken">Chicken</label><input type="radio" name="extra" class="meal chicken" id="chicken" onclick="meal1()">
+                <label for="fish">Fish</label><input type="radio" name="extra" class="meal fish" id="fish" onclick="meal2()">
+                <label for="veggie">Veggies</label><input type="radio" name="extra" class="meal veggie" id="veggie" onclick="meal3()">
             </div>
 
             <div class="extrastuff">
-                <input type="checkbox" class="extras legroom" id="legroom">Legroom
-                <input type="checkbox" class="extras windowseat" id="windowSeat">windowSeat
-                <input type="checkbox" class="extras headphones" id="headphones">Headphones
-                <input type="checkbox" class="extras extrafood" id="extraFood">Extra Food
+                <label for="legroom">Legroom</label><input type="checkbox" class="extras legroom" id="legroom" onclick="extra1()">
+                <label for="windowSeat">Window Seat</label><input type="checkbox" class="extras windowseat" id="windowSeat" onclick="extra2()">
+                <label for="headphones">Headphones</label><input type="checkbox" class="extras headphones" id="headphones" onclick="extra3()">
+                <label for="extraFood">Extra Food</label><input type="checkbox" class="extras extrafood" id="extraFood" onclick="extra4()">
             </div>
-        </div>    
     </div>
 
 
     <div class="buttons">
-        <button onclick="add()">Add</button>
+        <button onclick="add()" id="add">Add</button>
         <button onclick="print()">Submit</button>     
     </div>
 
-    <p id="test"></p>
+    <p id="fname"></p>
+    <p id="lname"></p>
+    <p id="d-o-b"></p>
+    <p id="leaving-from"></p>
+    <p id="going-to"></p>
+    <p id="leaving-date"></p>
+    <p id="return-date"></p>
+    <p id="bag-amount"></p>
+    <p id="req-meal"></p>
+    <p id="req-extra"></p>
 
 
     <script src="script.js"></script>
