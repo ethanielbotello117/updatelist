@@ -6,56 +6,60 @@ let filled = 0;
 let meal = ''
 let extra = ''
 
+let cost = 300;
+
 document.getElementById("firstName").value = "Ethaniel"
 document.getElementById("lastName").value = "Botello"
 document.getElementById("going").value = "Phoenix"
 document.getElementById("leaving").value = "LA"
-document.getElementById("bags").value = 100
+document.getElementById("bags").value = 0
 
 
 function meal1(){
+    meal = ``
     meal += "Chicken "
 }
 function meal2(){
+    meal = ``
     meal += "Fish "
 }
 function meal3(){
+    meal = ``
     meal += "Veggies "
 }
 
 function extra1(){
+    extra = ``
     extra += "Legroom "
 }
 function extra2(){
+    extra = ``
     extra += "Window Seat "
 }
 function extra3(){
+    extra = ``
     extra += "Headphones "
 }
 function extra4(){
+    extra = ``
     extra += "Extra Food "
 }
 
 
 function print(){
     if(added == true){
-            document.getElementById("fname").innerHTML = (`${passenger.firstName}`);
-        document.getElementById("lname").innerHTML = (`${passenger.lastName}`);
-        document.getElementById("d-o-b").innerHTML = (`${passenger.dOB}`);
-        document.getElementById("leaving-from").innerHTML = (`${passenger.leaving}`);
-        document.getElementById("going-to").innerHTML = (`${passenger.going}`);
-        document.getElementById("leaving-date").innerHTML = (`${passenger.leavingDate}`);
-        document.getElementById("return-date").innerHTML = (`${passenger.returnDate}`);
-        document.getElementById("bag-amount").innerHTML = (`${passenger.bags}`);
-        document.getElementById("req-meal").innerHTML = (`${passenger.meal}`);
-        document.getElementById("req-extra").innerHTML = (`${passenger.extra}`);
+        document.getElementById("fname").innerHTML = (`First Name: ${passenger.firstName}`);
+        document.getElementById("lname").innerHTML = (`Last Name: ${passenger.lastName}`);
+        document.getElementById("d-o-b").innerHTML = (`Date of Birth${passenger.dOB}`);
+        document.getElementById("leaving-from").innerHTML = (`Leaving from: ${passenger.leaving}`);
+        document.getElementById("going-to").innerHTML = (`Destination: ${passenger.going}`);
+        document.getElementById("leaving-date").innerHTML = (`Departure date:${passenger.leavingDate}`);
+        document.getElementById("return-date").innerHTML = (`Return date: ${passenger.returnDate}`);
+        document.getElementById("bag-amount").innerHTML = (`Bag amount: ${passenger.bags}`);
+        document.getElementById("req-meal").innerHTML = (`Ordered meal: ${passenger.meal}`);
+        document.getElementById("req-extra").innerHTML = (`Extra services: ${passenger.extra}`);
+        document.getElementById("cost").innerHTML = (`Cost: $${passenger.cost}`)
         }
-        if(meal == ''){
-            meal = 'None'
-        }
-        if(extra == ''){
-            extra = 'None'
-    }
 
 }
 
@@ -74,10 +78,30 @@ function add(){
         passenger.bags = document.getElementById("bags").value;
         passenger.meal = meal;
         passenger.extra = extra;
-        added = true
+
+        let bags = passenger.bags;
+        let bagCost = bags * 20;
+
+        cost += bagCost;
+
+        passenger.cost = cost;
+
+        added = true;
+
+        let none = `None`
+        if(meal == ``){
+            meal = none;
+        }
+        if(extra == ``){
+            extra = none;
+        }
+
+        passenger.meal = meal;
+        passenger.extra = extra;
     }else if(added == true){
-        meal = '';
-        extra = '';
+        meal = ``;
+        extra = ``;
+        cost = 300;
         document.getElementById("add").innerHTML = ("Add")
         passenger.firstName = document.getElementById("firstName").value = ('');
         passenger.lastName = document.getElementById("lastName").value = ('');
@@ -87,8 +111,7 @@ function add(){
         passenger.leavingDate = document.getElementById("leavingDate").value = ('');
         passenger.returnDate = document.getElementById("returnDate").value = ('');
         passenger.bags = document.getElementById("bags").value = ('');
-        passenger.meal = meal;
-        passenger.extra = extra;
+        passenger.cost = cost
         added = false;
     }
 }
