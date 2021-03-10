@@ -8,11 +8,11 @@ let extra = ''
 
 let cost = 300;
 
-document.getElementById("firstName").value = "Ethaniel"
-document.getElementById("lastName").value = "Botello"
-document.getElementById("going").value = "Phoenix"
-document.getElementById("leaving").value = "LA"
-document.getElementById("bags").value = 0
+document.getElementById("firstName").value = "Ethaniel";
+document.getElementById("lastName").value = "Botello";
+document.getElementById("going").value = "Phoenix";
+document.getElementById("leaving").value = "LA";
+document.getElementById("bags").value = 0;
 
 
 function meal1(){
@@ -115,3 +115,13 @@ function add(){
         added = false;
     }
 }
+
+
+
+// let bobby = {
+//     name: "jake",
+//     height: "5'9"
+// }
+
+
+// console.log(bobby);
